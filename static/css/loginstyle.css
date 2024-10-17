@@ -1,86 +1,103 @@
+/* Body background color */
+body {
+    background-color: lightcyan; /* Light blue background for the entire page */
+    font-family: 'Arial', sans-serif; /* Set a global font for better consistency */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
 /* Centering the form container */
 .login-container {
     width: 400px;
-    margin: 100px auto;
+    margin: 100px auto; /* Centered on the page */
     padding: 40px;
-    background: linear-gradient(135deg, #d1e7ff, #b0d4ff); /* Gradient background */
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    transition: all 0.3s ease; /* Smooth transition */
+    background-color: lightskyblue; /* Light background for the container */
+    border-radius: 12px; /* Slightly rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+    text-align: center; /* Centering text */
+}
+
+/* General heading styles */
+h2 {
+    color: #007BFF; /* Blue color for heading */
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif; /* Clean font for heading */
 }
 
 /* Styling the input fields */
 .login-container input[type="email"],
 .login-container input[type="password"] {
-    width: calc(100% - 24px);
-    padding: 14px;
-    margin: 12px 0;
-    display: inline-block;
-    border: 1px solid #90caff; /* Lighter blue for input borders */
-    border-radius: 6px;
-    box-sizing: border-box; /* Padding does not affect width */
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #007BFF; /* Blue border for input fields */
+    border-radius: 6px; /* Rounded corners for input fields */
+    box-sizing: border-box; /* Ensures padding does not affect width */
     font-size: 16px;
-    transition: border-color 0.3s ease; /* Smooth border color transition */
 }
 
+/* Prevent shrinking on focus */
 .login-container input[type="email"]:focus,
 .login-container input[type="password"]:focus {
-    border-color: #0056b3; /* Darker blue border on focus */
+    border: 2px solid #0056b3; /* Darker blue border on focus */
     outline: none; /* Removes the default outline */
-    box-shadow: 0 0 8px rgba(0, 86, 179, 0.5); /* Blue shadow on focus */
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5); /* Blue shadow on focus */
 }
 
 /* Styling the submit button */
 .login-container button {
     width: 100%;
-    background-color: #007BFF; /* Bright blue button */
+    background-color: #007BFF; /* Blue button */
     color: white;
-    padding: 14px;
-    margin-top: 10px;
+    padding: 14px 20px;
+    margin-top: 10px; /* Space above button */
     border: none;
-    border-radius: 6px;
+    border-radius: 6px; /* Rounded corners for button */
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
 .login-container button:hover {
     background-color: #0056b3; /* Darker blue on hover */
-    transform: translateY(-2px); /* Lift effect on hover */
-}
-
-.login-container button:active {
-    transform: translateY(0); /* Reset lift effect */
 }
 
 /* Message list styling */
 .messages {
     list-style-type: none;
     padding: 0;
+    margin-bottom: 20px; /* Space between messages and form */
 }
 
 .messages li {
     margin-bottom: 10px;
     padding: 10px;
     background-color: #f8d7da; /* Light red for error messages */
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-    border-radius: 4px;
+    color: #721c24; /* Darker color for text */
+    border: 1px solid #f5c6cb; /* Light red border */
+    border-radius: 4px; /* Rounded corners for messages */
 }
 
-/* General form styles */
-h2 {
-    color: #0056b3; /* Darker blue for headings */
-    margin-bottom: 20px;
-    font-family: 'Arial', sans-serif; /* Font family for the header */
-}
-
+/* Label styles */
 label {
     text-align: left;
     display: block;
     margin-bottom: 5px;
     font-size: 14px;
-    color: #333; /* Dark gray for labels */
-    font-weight: 600; /* Slightly bold labels */
+    color: #333; /* Dark color for labels for better contrast */
+    font-family: 'Arial', sans-serif; /* Clean font for labels */
+}
+
+/* Register link styles */
+.login-container p {
+    margin-top: 20px; /* Space above the register link */
+}
+
+.login-container a {
+    color: #007BFF; /* Blue color for link */
+    text-decoration: none; /* Remove underline */
+}
+
+.login-container a:hover {
+    text-decoration: underline; /* Underline on hover */
 }

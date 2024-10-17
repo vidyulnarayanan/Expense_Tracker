@@ -7,7 +7,7 @@ body {
 }
 
 /* Add expense container styling */
-.add-expense-container {
+.edit-expense-container {
     max-width: 500px; /* Max width for better layout */
     margin: 100px auto; /* Centered container */
     padding: 30px; /* Padding for space inside */

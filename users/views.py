@@ -67,8 +67,8 @@ class LoginView(View):
             return redirect('home')
         else:
             messages.error(request, 'Invalid email or password.')
-            return redirect('login')
-
+            return render(request, 'login.html', {'email': email}) 
+        
 def logout_view(request):
     logout(request)
     return redirect('login')
