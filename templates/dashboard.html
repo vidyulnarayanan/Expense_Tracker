@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <h2>Expense Dashboard</h2>
+    
+    <div id="message-container" style="display: none;">
+        {% if messages %}
+            {% for message in messages %}
+                <span class="message-content {{ message.tags }}">{{ message }}</span>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    {% if pie_chart %}
+        <div class="total-expense">
+            <h3>Total Expense for {{ current_month_name }}: ₹{{ total_expense }}</h3>
+        </div>
+        <div class="pie-chart-container">
+            <h3>Expenses by category - {{current_month_name}}</h3>
+            <img src="data:image/png;base64,{{ pie_chart }}" alt="Pie Chart of Expenses by Category">
+        </div>
+    {% else %}
+        <div class="total-expense">
+            <h3>No expenses recorded for {{ current_month_name }}</h3>
+        </div>
+    {% endif %}
+
+    <div class="recent-transactions">
+        <h3>Recent Transactions</h3>
+        <ul>
+            {% for expense in recent_transactions %}
+            <li class="expense-item">
+                <p>{{ expense.description }} - ₹{{ expense.amount }} - {{ expense.date }}
+                <a href="{% url 'edit_expense' expense.id %}" class="edit-expense-btn">Edit Expense</a></p>
+            </li>
+            {% empty %}
+            <p>No recent transactions found.</p>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <a href="{% url 'add_expense' %}" class="add-expense-btn">Add New Expense</a>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const messageContainer = document.getElementById('message-container');
+        if (messageContainer.children.length > 0) {
+            const messages = Array.from(messageContainer.children);
+            messages.forEach(function(message) {
+                alert(message.textContent);
+            });
+        }
+    });
+</script>
+{% endblock %}

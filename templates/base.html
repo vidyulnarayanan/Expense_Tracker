@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Expense Tracker{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/dashboardstyle.css' %}">
+    {% block extra_css %}
+    {% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{% url 'dashboard' %}">Dashboard</a>
+        <a href="{% url 'add_expense' %}">Add Expense</a>
+        <a href="{% url 'expense_history' %}">Expense History</a>
+        <a href="{% url 'reports' %}">Reports</a>  
+        <a href="{% url 'logout' %}">Logout</a>
+    </nav>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    {% block extra_js %}
+    {% endblock %}
+</body>
+</html>

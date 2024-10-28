@@ -1,0 +1,211 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef;
+    margin: 0;
+    padding: 20px;
+}
+
+.expense-history-container {
+    width: 100%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: auto;
+}
+
+.expense-header {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.filter-section {
+    margin-bottom: 20px;
+}
+
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.form-input {
+    flex: 1 1 120px;
+    min-width: 100px;
+}
+
+.search-input {
+    flex: 1 1 180px;
+    min-width: 150px;
+}
+
+.date-input,
+.select-input {
+    flex: 1 1 120px;
+    min-width: 100px;
+}
+
+.filter-btn {
+    background-color: #007bff;
+    color: white;
+    width: auto;
+    flex: 1 1 auto;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 38px;
+}
+
+label {
+    margin-right: 5px;
+}
+
+.filter-btn:hover {
+    background-color: #0056b3;
+}
+
+.expense-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.expense-item {
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.expense-details {
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.description {
+    font-weight: bold;
+    color: #333;
+}
+
+.amount {
+    color: #28a745;
+}
+
+.category, .date {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-btn {
+    background-color: #17a2b8;
+}
+
+.edit-btn:hover {
+    background-color: #138496;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.no-expense {
+    text-align: center;
+    color: #6c757d;
+}
+
+.pagination-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.pagination-btn {
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: white;
+    background-color: #007bff;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.pagination-btn i {
+    margin: 0 5px;
+}
+
+.pagination-btn:hover {
+    background-color: #0056b3;
+}
+
+.active-page {
+    background-color: #6c757d;
+    color: white;
+    font-weight: bold;
+    cursor: default;
+}
+
+.prev-page-btn {
+    background-color: #5cb85c;
+    color: #ffffff;
+}
+
+.prev-page-btn:hover {
+    background-color: #5cb85c;
+}
+
+.next-page-btn {
+    background-color: #5cb85c;
+    color: #ffffff;
+}
+
+.next-page-btn:hover {
+    background-color: #4cae4c;
+}
+
+.page-number {
+    margin: 0 15px;
+}

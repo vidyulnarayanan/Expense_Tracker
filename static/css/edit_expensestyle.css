@@ -1,95 +1,85 @@
-/* Body background color */
 body {
-    font-family: 'Arial', sans-serif; /* Modern font for consistency */
-    background-color: lightcyan; /* Light blue background for contrast */
+    font-family: 'Arial', sans-serif;
+    background-color: lightcyan;
     margin: 0;
-    padding: 20px; /* Space around the body */
+    padding: 20px;
 }
 
-/* Add expense container styling */
 .edit-expense-container {
-    max-width: 500px; /* Max width for better layout */
-    margin: 100px auto; /* Centered container */
-    padding: 30px; /* Padding for space inside */
-    background: lightskyblue; /* Light background for the form */
-    border-radius: 12px; /* Slightly rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 30px;
+    background: lightskyblue;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Header styles */
 h2 {
-    color: #007BFF; /* Blue color for header */
+    color: #007BFF;
     margin-bottom: 20px;
-    text-align: center; /* Centered header */
-    font-family: 'Arial', sans-serif; /* Clean font for heading */
+    text-align: center;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Label styles */
 label {
     display: block;
-    margin: 15px 0 5px; /* Margin for spacing */
-    font-weight: bold; /* Bold labels */
-    color: #333; /* Dark color for labels */
+    margin: 15px 0 5px;
+    font-weight: bold;
+    color: #333;
 }
 
-/* Input and select styles */
 input, select {
-    width: calc(100% - 20px); /* Full width minus padding */
-    padding: 12px; /* Padding for usability */
+    width: calc(100% - 20px);
+    padding: 12px;
     margin-bottom: 20px;
-    border: 1px solid #007BFF; /* Blue border for inputs */
-    border-radius: 6px; /* Slightly rounded corners */
-    transition: border-color 0.3s; /* Smooth transition */
-    box-sizing: border-box; /* Include padding and border in width calculation */
+    border: 1px solid #007BFF;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
 }
 
-/* Input focus effect */
 input:focus, select:focus {
-    border-color: #0056b3; /* Darker blue on focus */
-    outline: none; /* Remove default outline */
-    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5); /* Blue shadow on focus */
+    border-color: #0056b3;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
 }
 
-/* Button styles */
 button {
-    width: 100%; /* Full width for button */
-    background-color: #007BFF; /* Blue button */
+    width: 100%;
+    background-color: #007BFF;
     color: white;
-    padding: 14px; /* Padding for button */
+    padding: 14px;
     border: none;
-    border-radius: 6px; /* Rounded corners */
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 16px; /* Larger text */
-    transition: background-color 0.3s, transform 0.2s; /* Transition for hover */
-    display: block; /* Display block to center */
-    margin-top: 10px; /* Space above button */
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    display: block;
+    margin-top: 10px;
 }
 
-/* Button hover effect */
 button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: scale(1.05); /* Slight scaling effect */
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
-/* Error and confirmation messages */
 #error-message, #confirmation-message {
     font-size: 16px;
     margin-top: 20px;
-    text-align: center; /* Centered text for messages */
+    text-align: center;
 }
 
 #error-message {
-    color: #dc3545; /* Red color for error messages */
+    color: #dc3545;
 }
 
 #confirmation-message {
-    color: #28a745; /* Green color for confirmation messages */
+    color: #28a745;
 }
 
-/* Error styles */
 .error {
     color: red;
     font-size: 0.9em;
-    display: none; /* Hidden by default */
-    margin-top: -15px; /* Align with input fields */
+    display: none;
+    margin-top: -15px;
 }

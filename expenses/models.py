@@ -10,7 +10,7 @@ class Expense(models.Model):
         ('Other', 'Other'),  
     )
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)  
+    user = models.ForeignKey(User, on_delete=models.CASCADE) 
     description = models.CharField(max_length=255, default='Unnamed Expense')  
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     date = models.DateField()  

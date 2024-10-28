@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.navbar {
+    background-color: #007bff;
+    padding: 15px;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dashboard-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #007bff;
+}
+
+.total-expense {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+.chart-container {
+    margin: 30px auto;
+    width: 100%;
+}
+
+.pie-chart-container {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.pie-chart-container img {
+    width: 100%;  /* Makes the pie chart responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 400px; /* Optional: set a max-width for larger screens */
+}
+
+.recent-transactions {
+    margin: 20px 0;
+}
+
+.recent-transactions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-transactions li {
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    color: #333;
+}
+
+.recent-transactions li p {
+    margin: 0;
+}
+
+.add-expense-btn, .edit-expense-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin: 10px 0;
+}
+
+.add-expense-btn:hover, .edit-expense-btn:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+    .navbar a {
+        display: block; 
+        margin: 10px 0;
+    }
+    
+    .dashboard-container {
+        padding: 15px; 
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .total-expense {
+        font-size: 18px; 
+    }
+
+    .recent-transactions li {
+        font-size: 14px; 
+    }
+
+    .add-expense-btn, .edit-expense-btn {
+        padding: 8px 16px;
+    }
+}

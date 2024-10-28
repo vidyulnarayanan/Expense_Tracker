@@ -1,46 +1,42 @@
+{% extends "base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Edit Expense</title>
-    <link rel="stylesheet" href="{% static 'css/edit_expensestyle.css' %}">
-</head>
-<body>
-    <div class="edit-expense-container">
-        <h2>Edit Expense</h2>
-        <form id="edit-expense-form" action="{% url 'edit_expense' expense.id %}" method="POST">
-            {% csrf_token %}
-            <label for="description">Expense Description:</label>
-            <input type="text" id="description" name="description" value="{{ expense.description }}" required>
+{% block title %}Edit Expense{% endblock %}
 
-            <label for="amount">Amount:</label>
-            <input type="number" id="amount" name="amount" value="{{ expense.amount }}" min="0.01" step="0.01" required>
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/edit_expensestyle.css' %}">
+<style>
+    .error {
+        color: red;
+        font-size: 0.9em;
+    }
+</style>
+{% endblock %}
 
-            <label for="date">Date of Transaction:</label>
-            <input type="date" id="date" name="date" value="{{ expense.date }}" required>
+{% block content %}
+<div class="edit-expense-container">
+    <h2>Edit Expense</h2>
+    <form id="edit-expense-form" action="{% url 'edit_expense' expense.id %}" method="POST">
+        {% csrf_token %}
 
-            <label for="category">Category:</label>
-            <select id="category" name="category" required>
-                <option value="">Select a category</option>
-                {% for key, value in expense.CATEGORY_CHOICES %}
-                    <option value="{{ key }}" {% if key == expense.category %}selected{% endif %}>{{ value }}</option>
-                {% endfor %}
-            </select>
+        <label for="description">Expense Description:</label>
+        <input type="text" id="description" name="description" value="{{ expense.description }}" required>
 
-            <button type="submit">Update Expense</button>
-        </form>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" value="{{ expense.amount }}" min="0.01" step="0.01" required>
 
-        <div id="confirmation-message" style="display: none; color: green;">
-            Expense updated successfully!
-        </div>
-    </div>
-    
-    <script>
-        document.getElementById('edit-expense-form').addEventListener('submit', function(event) {
-            document.getElementById('confirmation-message').style.display = 'block';
-        });
-    </script>
-</body>
-</html>
+        <label for="date">Date of Transaction:</label>
+        <input type="date" id="date" name="date" value="{{ expense.date|date:'Y-m-d' }}" required>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+            <option value="">Select a category</option>
+            {% for key, value in expense.CATEGORY_CHOICES %}
+                <option value="{{ key }}" {% if key == expense.category %}selected{% endif %}>{{ value }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Update Expense</button>
+    </form>
+</div>
+{% endblock %}

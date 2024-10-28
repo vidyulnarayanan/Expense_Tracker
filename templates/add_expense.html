@@ -1,105 +1,53 @@
+{% extends "base.html" %}
 {% load static %}
+{% block title %}Add Expense{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/add_expensestyle.css' %}">
+<style>
+    .error {
+        color: red;
+        font-size: 0.9em;
+    }
+</style>
+{% endblock %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Add Expense</title>
-    <link rel="stylesheet" href="{% static 'css/add_expensestyle.css' %}">
-    <style>
-        .error {
-            color: red;
-            font-size: 0.9em;
-            display: none;
-        }
-    </style>
-</head>
-<body>
-    <div class="add-expense-container">
-        <h2>Add Expense</h2>
-        <form id="add-expense-form" action="{% url 'add_expense' %}" method="POST">
-            {% csrf_token %}
-            <label for="description">Expense Description:</label>
-            <input type="text" id="description" name="description" placeholder="e.g., Lunch at McDonald's" required>
-            <div class="error" id="description-error">Please enter a valid description.</div>
-
-            <label for="amount">Amount:</label>
-            <input type="number" id="amount" name="amount" min="0.01" step="0.01" placeholder="Amount spent" required>
-            <div class="error" id="amount-error">Please enter a valid amount.</div>
-
-            <label for="date">Date of Transaction:</label>
-            <input type="date" id="date" name="date" value="{{ today|date:'Y-m-d' }}" required>
-            <div class="error" id="date-error">Please select a valid date.</div>
-
-            <label for="category">Category:</label>
-            <select id="category" name="category" required>
-                <option value="">Select a category</option>
-                <option value="Food">Food</option>
-                <option value="Transportation">Transportation</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Utilities">Utilities</option>
-                <option value="Other">Other</option>
-            </select>
-            <div class="error" id="category-error">Please select a category.</div>
-
-            <button type="submit">Add Expense</button>
-        </form>
-
-        <div id="confirmation-message" style="display: none; color: green;">
-            Expense added successfully!
-        </div>
-        
-        <div id="error-message" style="display: none; color: red;">
-            Please ensure all fields are correctly filled.
-        </div>
-    </div>
+{% block content %}
+<div class="add-expense-container">
+    <h2>Add Expense</h2>
     
-    <script>
-        document.getElementById('add-expense-form').addEventListener('submit', function(event) {
-            // Clear previous error messages
-            const errorElements = document.querySelectorAll('.error');
-            errorElements.forEach(element => {
-                element.style.display = 'none';
-            });
+    <form id="add-expense-form" action="{% url 'add_expense' %}" method="POST">
+        {% csrf_token %}
+        <label for="description">Expense Description:</label>
+        <input type="text" id="description" name="description" placeholder="e.g., Lunch at McDonald's" required>
 
-            let valid = true;
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" min="0.01" step="0.01" placeholder="Amount spent" required>
 
-            // Validate Description
-            const description = document.getElementById('description').value.trim();
-            if (!description) {
-                document.getElementById('description-error').style.display = 'block';
-                valid = false;
-            }
+        <label for="date">Date of Transaction:</label>
+        <input type="date" id="date" name="date" value="{{ today|date:'Y-m-d' }}" required>
 
-            // Validate Amount
-            const amount = parseFloat(document.getElementById('amount').value);
-            if (isNaN(amount) || amount <= 0) {
-                document.getElementById('amount-error').style.display = 'block';
-                valid = false;
-            }
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+            <option value="">Select a category</option>
+            <option value="Food">Food</option>
+            <option value="Transportation">Transportation</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Other">Other</option>
+        </select>
 
-            // Validate Date
-            const date = document.getElementById('date').value;
-            if (!date) {
-                document.getElementById('date-error').style.display = 'block';
-                valid = false;
-            }
+        <button type="submit">Add Expense</button>
+    </form>
+</div>
 
-            // Validate Category
-            const category = document.getElementById('category').value;
-            if (!category) {
-                document.getElementById('category-error').style.display = 'block';
-                valid = false;
-            }
-
-            // If not valid, prevent form submission
-            if (!valid) {
-                event.preventDefault();
-                document.getElementById('error-message').style.display = 'block';
-            } else {
-                document.getElementById('confirmation-message').style.display = 'block';
-            }
-        });
-    </script>
-</body>
-</html>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const messageContainer = document.getElementById('message-container');
+        const successMessage = messageContainer.querySelector('.success');
+        
+        if (successMessage) {
+            alert(successMessage.textContent);
+        }
+    });
+</script>
+{% endblock %}

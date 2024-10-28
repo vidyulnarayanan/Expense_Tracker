@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Expense Reports{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/reportsstyle.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="reports-container">
+    <h1>Expense Reports</h1>
+    <div class="chart-section">
+        <h2>Monthly Expenses</h2>
+        <img src="data:image/png;base64,{{ monthly_chart }}" alt="Monthly Expenses Chart" />
+    </div>
+
+    <div class="chart-section">
+        <h2>Expenses by Category</h2>
+        <img src="data:image/png;base64,{{ category_chart }}" alt="Category Expenses Chart" />
+    </div>
+
+    <div class="chart-section">
+        <h2>Daily Expenses</h2>
+        <img src="data:image/png;base64,{{ daily_chart }}" alt="Daily Expenses Chart" />
+    </div>
+
+    <div class="category-summary">
+        <h2>Expenses by Category</h2>
+        <ul>
+            {% for expense in category_expenses %}
+                <li>{{ expense.category }}: ₹{{ expense.total }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="report-options">
+        <button onclick="printReport()">Download Pdf</button>
+        <a href="{% url 'download_report' %}?type=current_month" class="download-button">Download {{current_month_name}} Report</a>
+        <a href="{% url 'download_report' %}?type=all" class="download-button">Download All Reports</a>
+    </div>
+</div>
+<script>
+    function printReport() {
+        window.print();
+    }
+</script>
+{% endblock %}

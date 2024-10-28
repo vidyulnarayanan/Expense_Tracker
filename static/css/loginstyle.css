@@ -1,103 +1,109 @@
-/* Body background color */
-body {
-    background-color: lightcyan; /* Light blue background for the entire page */
-    font-family: 'Arial', sans-serif; /* Set a global font for better consistency */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-}
-
-/* Centering the form container */
-.login-container {
-    width: 400px;
-    margin: 100px auto; /* Centered on the page */
-    padding: 40px;
-    background-color: lightskyblue; /* Light background for the container */
-    border-radius: 12px; /* Slightly rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
-    text-align: center; /* Centering text */
-}
-
-/* General heading styles */
-h2 {
-    color: #007BFF; /* Blue color for heading */
-    margin-bottom: 20px;
-    font-family: 'Arial', sans-serif; /* Clean font for heading */
-}
-
-/* Styling the input fields */
-.login-container input[type="email"],
-.login-container input[type="password"] {
-    width: calc(100% - 20px); /* Full width minus padding */
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #007BFF; /* Blue border for input fields */
-    border-radius: 6px; /* Rounded corners for input fields */
-    box-sizing: border-box; /* Ensures padding does not affect width */
-    font-size: 16px;
-}
-
-/* Prevent shrinking on focus */
-.login-container input[type="email"]:focus,
-.login-container input[type="password"]:focus {
-    border: 2px solid #0056b3; /* Darker blue border on focus */
-    outline: none; /* Removes the default outline */
-    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5); /* Blue shadow on focus */
-}
-
-/* Styling the submit button */
-.login-container button {
-    width: 100%;
-    background-color: #007BFF; /* Blue button */
-    color: white;
-    padding: 14px 20px;
-    margin-top: 10px; /* Space above button */
-    border: none;
-    border-radius: 6px; /* Rounded corners for button */
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
-}
-
-.login-container button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-/* Message list styling */
-.messages {
-    list-style-type: none;
+/* Reset some default margins and paddings */
+body, h2, p {
+    margin: 0;
     padding: 0;
-    margin-bottom: 20px; /* Space between messages and form */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f5; /* Light gray background for entire page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+}
+
+/* Centering the login container and setting size */
+.login-container {
+    background-color: #ffffff;
+    width: 350px;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Styling for heading */
+h2 {
+    color: #333333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* General styles for form input fields */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Styling for form inputs on focus */
+.form-input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* Button styling */
+.submit-btn {
+    width: 100%;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Message styling */
+.messages {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
 }
 
 .messages li {
-    margin-bottom: 10px;
+    background-color: #f8d7da;
+    color: #721c24;
     padding: 10px;
-    background-color: #f8d7da; /* Light red for error messages */
-    color: #721c24; /* Darker color for text */
-    border: 1px solid #f5c6cb; /* Light red border */
-    border-radius: 4px; /* Rounded corners for messages */
+    border-radius: 4px;
+    border: 1px solid #f5c6cb;
+    margin-bottom: 10px;
 }
 
-/* Label styles */
-label {
-    text-align: left;
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
-    color: #333; /* Dark color for labels for better contrast */
-    font-family: 'Arial', sans-serif; /* Clean font for labels */
+/* Styling the link to the registration page */
+p {
+    margin-top: 20px;
 }
 
-/* Register link styles */
-.login-container p {
-    margin-top: 20px; /* Space above the register link */
+a {
+    color: #007BFF;
+    text-decoration: none;
 }
 
-.login-container a {
-    color: #007BFF; /* Blue color for link */
-    text-decoration: none; /* Remove underline */
-}
-
-.login-container a:hover {
-    text-decoration: underline; /* Underline on hover */
+a:hover {
+    text-decoration: underline;
 }

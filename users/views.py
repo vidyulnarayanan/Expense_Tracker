@@ -63,8 +63,7 @@ class LoginView(View):
         
         if user is not None:
             login(request, user)
-            messages.success(request,'Login successful.')
-            return redirect('home')
+            return redirect('dashboard')
         else:
             messages.error(request, 'Invalid email or password.')
             return render(request, 'login.html', {'email': email}) 
